@@ -15,7 +15,7 @@ const problem2 = (connection, table1) => {
     })
     .then(() => {
       return connection.query(
-        "select season,winner ,count(*) as wins from matches where result like 'normal' group by season,winner order by season;"
+        `select season,winner ,count(*) as wins from ${table1} where result like 'normal' group by season,winner order by season;`
       );
     })
     .then((data) => {

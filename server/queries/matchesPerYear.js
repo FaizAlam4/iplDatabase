@@ -13,7 +13,7 @@ const problem1 = (connection, table1) => {
     })
     .then(() => {
       return connection.query(
-        "select season , count(*) as totalMatchesPlayed from matches group by season order by season"
+        `select season , count(*) as totalMatchesPlayed from ${table1} group by season order by season`
       );
     })
     .then((data) => {
