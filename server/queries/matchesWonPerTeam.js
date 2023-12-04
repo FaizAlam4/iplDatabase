@@ -8,7 +8,6 @@ const problem2 = (connection, table1) => {
       );
     })
     .then((data) => {
-      // console.log(data)
       if (data.length == 0) {
         throw new Error("Table doesn't exists!");
       }

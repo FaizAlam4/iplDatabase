@@ -3,12 +3,13 @@ const problem1 = (connection, table1) => {
     .getConnection()
     .then(() => {
       console.log("Connection established successfully!");
-      return connection.query(`SELECT * FROM information_schema.tables WHERE table_schema = DATABASE() AND table_name ='${table1}'`);
+      return connection.query(
+        `SELECT * FROM information_schema.tables WHERE table_schema = DATABASE() AND table_name ='${table1}'`
+      );
     })
     .then((data) => {
-      // console.log(data)
-      if(data.length==0){
-        throw new Error("Table doesn't exists!")
+      if (data.length == 0) {
+        throw new Error("Table doesn't exists!");
       }
     })
     .then(() => {
@@ -25,7 +26,6 @@ const problem1 = (connection, table1) => {
     .finally(() => {
       connection.end();
     });
-  
 };
 
 module.exports = problem1;
