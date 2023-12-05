@@ -1,5 +1,5 @@
 const problem5 = (connection, table1, table2) => {
-  connection
+  return connection
     .getConnection()
     .then(() => {
       console.log("Connection established successfully!");
@@ -33,7 +33,7 @@ const problem5 = (connection, table1, table2) => {
     })
     .catch((err) => {
       console.log(err);
-    })
+    })  
 };
 
 module.exports = problem5;

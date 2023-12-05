@@ -1,5 +1,5 @@
 const problem9= (connection, table1, table2) => {
-    connection
+     return connection
       .getConnection()
       .then(() => {
         console.log("Connection established successfully!");

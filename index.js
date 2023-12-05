@@ -9,12 +9,19 @@ const problem7 = require("./server/queries/highestDismissal.js");
 const problem8 = require("./server/queries/superOver.js");
 const problem9 = require("./server/queries/economicalBowler.js");
 
-problem1(connection, 'matches');
-problem2(connection, 'matches');
-problem3(connection, "matches");
-problem4(connection, "matches", "deliveries", "DA Warner");
-problem5(connection, "matches", "deliveries");
-problem6(connection, "matches");
-problem7(connection, "deliveries");
-problem8(connection, "deliveries");
-problem9(connection, "matches", "deliveries");
+let func = async () => {
+  try {
+    await problem1(connection, "matches");
+    await problem2(connection, "matches");
+    await problem3(connection, "matches");
+    await problem4(connection, "matches", "deliveries", "DA Warner");
+    await problem5(connection, "matches", "deliveries");
+    await problem6(connection, "matches");
+    await problem7(connection, "deliveries");
+    await problem8(connection, "deliveries");
+    await problem9(connection, "matches", "deliveries");
+  } catch (err) {
+    console.log(err);
+  }
+};
+func()
