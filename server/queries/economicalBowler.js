@@ -1,4 +1,4 @@
-const problem5 = (connection, table1, table2) => {
+const problem9= (connection, table1, table2) => {
     connection
       .getConnection()
       .then(() => {
@@ -25,7 +25,7 @@ const problem5 = (connection, table1, table2) => {
       })
       .then(() => {
         return connection.query(
-          `select season, bowling_team, sum(extra_runs) as runConceded from ${table1} A join ${table2} B on A.id=B.match_id where season=2016 group by bowling_team;`
+          `select bowler , (sum(total_runs-legbye_runs-bye_runs)*6/count(case when wide_runs=0 and noball_runs=0 then 1 else null end)) as economy from ${table2} where match_id in (select id from ${table1} where season=2015) group by bowler order by economy asc limit 10;`
         );
       })
       .then((data) => {
@@ -39,5 +39,5 @@ const problem5 = (connection, table1, table2) => {
       });
   };
   
-  module.exports = problem5;
+  module.exports = problem9;
   

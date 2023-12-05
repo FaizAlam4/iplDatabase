@@ -7,6 +7,7 @@ const problem5 = require("./server/queries/extraRunsConcede.js");
 const problem6 = require("./server/queries/winTossWinMatch.js");
 const problem7 = require("./server/queries/highestDismissal.js");
 const problem8 = require("./server/queries/superOver.js");
+const problem9 = require("./server/queries/economicalBowler.js");
 
 // problem1(connection, 'matches');
 // problem2(connection, 'matches');
@@ -15,4 +16,5 @@ const problem8 = require("./server/queries/superOver.js");
 // problem5(connection, "matches", "deliveries");
 // problem6(connection, "matches");
 // problem7(connection, "deliveries");
-problem8(connection, "deliveries");
+// problem8(connection, "deliveries");
+problem9(connection, "matches", "deliveries");
