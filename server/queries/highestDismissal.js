@@ -23,9 +23,7 @@ const problem7 = (connection, table1) => {
     .catch((err) => {
       console.log(err);
     })
-    .finally(() => {
-      connection.end();
-    });
+  
 };
 
 module.exports = problem7;

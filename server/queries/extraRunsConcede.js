@@ -34,9 +34,6 @@ const problem5 = (connection, table1, table2) => {
     .catch((err) => {
       console.log(err);
     })
-    .finally(() => {
-      connection.end();
-    });
 };
 
 module.exports = problem5;
